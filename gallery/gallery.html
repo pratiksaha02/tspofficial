@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="gallery.css">
+
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Image Gallery</h2>
+  <p>Click on the images below:</p>
+</div>
+
+
+<div class="row">
+  <div class="column">
+    <img src="1.jpg" alt="Picture 1" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="2.jpg" alt="Picture 2" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="3.jpg" alt="Picture 3" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="4.jpg" alt="Picture 4" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="5.jpg" alt="Picture 5" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
